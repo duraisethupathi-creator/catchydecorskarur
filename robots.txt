@@ -1,3 +1,5 @@
+
 User-agent: *
-Allow: /
-Sitemap: sitemap.xml
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://www.catchydecors.in/sitemap.xml
