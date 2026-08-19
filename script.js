@@ -10,6 +10,7 @@ document.querySelector('[data-gallery-next]')?.addEventListener('click', () => s
 let autoSpin;
 if (ring) { autoSpin = setInterval(() => spinGallery(1), 4200); ring.closest('.gallery-stage').addEventListener('mouseenter', () => clearInterval(autoSpin)); }
 
+
 document.querySelector('.contact-form form')?.addEventListener('submit', (event) => {
   event.preventDefault(); document.querySelector('.form-status').style.display = 'block'; event.currentTarget.reset();
 });
