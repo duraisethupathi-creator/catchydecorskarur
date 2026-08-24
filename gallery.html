@@ -92,34 +92,68 @@
         </section>
         <section class="section container">
             <div class="section-heading">
-                <div><span class="eyebrow">360° inspiration viewer</span>
-                    <h2>Turn the room. Find your look.</h2>
+                <div><span class="eyebrow">10-image sliding inspiration</span>
+                    <h2>Explore our latest interior styles.</h2>
                 </div>
-                <p>Use the arrows to rotate our interactive design carousel, or let it glide through on its own.</p>
+                <p>Enjoy a smooth automatic slideshow of curtains, blinds, wallpapers, headboards and more. Hover over the gallery to pause.</p>
             </div>
-            <div class="gallery-stage" aria-label="Rotating interior inspiration gallery">
-                <div class="gallery-ring">
-                    <figure class="gallery-slide"><img
-                            src="assets/curtains/best_window_curtain_in_karur.webp"
-                            alt="Window curtains installed in a Karur home"><span>Light curtains in modern interior</span></figure>
-                    <figure class="gallery-slide"><img
-                            src="assets/blinds/zebra_blinds_in-karur.webp"
-                            alt="Zebra blinds installed in a Karur home"><span>Zebra Blinds for all areas</span></figure>
-                    <figure class="gallery-slide"><img
-                            src="assets/floor mat/floor_mate_in_karur.webp"
-                            alt="Wooden-look flooring mat installed by Catchy Decors Karur"><span>classic Wooden flooring</span></figure>
-                    <figure class="gallery-slide"><img
-                            src="assets/headboard/classic_head_board_in_karur.webp"
-                            alt="Upholstered headboard design by Catchy Decors Karur"><span>Relaxing Headboard</span></figure>
-                    <figure class="gallery-slide"><img
-                            src="assets/wallpaper/feel_good_wallpaper_in_karur.webp"
-                            alt="Premium patterned wallpaper installed by Catchy Decors Karur"><span>Premium look Wallpapers</span></figure>
-                    <figure class="gallery-slide"><img
-                            src="assets/wooden sofa cushion/wooden_sofa_cushion_in_karur.webp"
-                            alt="Decorative cushions on a wooden sofa styled by Catchy Decors Karur"><span>Wooden Sofa Cushion</span></figure>
+
+            <div class="gallery-slider" aria-label="Automatic sliding interior inspiration gallery">
+                <div class="gallery-track">
+                    <figure class="gallery-slide">
+                        <img src="assets/curtains/best_window_curtain_in_karur.webp" alt="Window curtains installed in a Karur home" loading="eager">
+                        <span>Elegant Window Curtains</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/blinds/zebra_blinds_in-karur.webp" alt="Zebra blinds installed in a Karur home" loading="lazy">
+                        <span>Modern Zebra Blinds</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/wallpaper/feel_good_wallpaper_in_karur.webp" alt="Premium wallpaper installed in a Karur home" loading="lazy">
+                        <span>Premium Wallpapers</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/headboard/classic_head_board_in_karur.webp" alt="Classic upholstered headboard by Catchy Decors" loading="lazy">
+                        <span>Luxury Headboards</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/wooden sofa cushion/wooden_sofa_cushion_in_karur.webp" alt="Wooden sofa cushion styled by Catchy Decors" loading="lazy">
+                        <span>Wooden Sofa Cushions</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/blinds/roman_blind_karur.webp" alt="Roman blinds by Catchy Decors Karur" loading="lazy">
+                        <span>Roman Blinds</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/curtains/luxury_feel_curtains_in_karur.webp" alt="Luxury curtains installed by Catchy Decors" loading="lazy">
+                        <span>Luxury Curtain Styling</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/wallpaper/customize_wallapaper_in_karur.webp" alt="Customized wallpaper by Catchy Decors" loading="lazy">
+                        <span>Customized Wallpaper</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/headboard/best_head_board_in_karur.webp" alt="Premium headboard design by Catchy Decors" loading="lazy">
+                        <span>Premium Headboard Design</span>
+                    </figure>
+                    <figure class="gallery-slide">
+                        <img src="assets/mosquito net/mosquito_net_in_karur.webp" alt="Mosquito net installation by Catchy Decors" loading="lazy">
+                        <span>Smart Mosquito Nets</span>
+                    </figure>
+
+                    <!-- Duplicate set for a seamless infinite loop -->
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/curtains/best_window_curtain_in_karur.webp" alt="" loading="lazy"><span>Elegant Window Curtains</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/blinds/zebra_blinds_in-karur.webp" alt="" loading="lazy"><span>Modern Zebra Blinds</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/wallpaper/feel_good_wallpaper_in_karur.webp" alt="" loading="lazy"><span>Premium Wallpapers</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/headboard/classic_head_board_in_karur.webp" alt="" loading="lazy"><span>Luxury Headboards</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/wooden sofa cushion/wooden_sofa_cushion_in_karur.webp" alt="" loading="lazy"><span>Wooden Sofa Cushions</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/blinds/roman_blind_karur.webp" alt="" loading="lazy"><span>Roman Blinds</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/curtains/luxury_feel_curtains_in_karur.webp" alt="" loading="lazy"><span>Luxury Curtain Styling</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/wallpaper/customize_wallapaper_in_karur.webp" alt="" loading="lazy"><span>Customized Wallpaper</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/headboard/best_head_board_in_karur.webp" alt="" loading="lazy"><span>Premium Headboard Design</span></figure>
+                    <figure class="gallery-slide" aria-hidden="true"><img src="assets/mosquito net/mosquito_net_in_karur.webp" alt="" loading="lazy"><span>Smart Mosquito Nets</span></figure>
                 </div>
             </div>
-            
         </section>
         <section class="section tint">
             <div class="container">

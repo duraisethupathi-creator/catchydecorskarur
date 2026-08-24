@@ -831,113 +831,128 @@ h1 em {
     margin: 0 3px
 }
 
-.gallery-stage {
-    height: 510px;
-    margin-top: 15px;
-    display: grid;
-    place-items: center;
-    perspective: 1200px;
+.gallery-slider {
+    --card-width: 290px;
+    --gap: 22px;
+    margin-top: 18px;
     overflow: hidden;
-    border-radius: 32px;
-    background: radial-gradient(circle at 50% 20%, #edf9ff, #bfe6ff 110%);
-    position: relative
-}
-
-.gallery-stage:before {
-    content: 'CATCHY DECORS • KARUR';
-    position: absolute;
-    top: 26px;
-    font-size: .66rem;
-    letter-spacing: .22em;
-    font-weight: 800;
-    color: #4382ad
-}
-
-.gallery-ring {
-    --rot: 0deg;
-    width: 270px;
-    height: 344px;
     position: relative;
-    transform-style: preserve-3d;
-    transition: transform .75s cubic-bezier(.2, .8, .2, 1);
-    transform: rotateY(var(--rot))
+    border-radius: 30px;
+    padding: 28px 0;
+    background: radial-gradient(circle at 50% 10%, #f3fbff, #c9eaff 110%);
+    box-shadow: 0 18px 45px rgba(14, 72, 130, .10);
+    isolation: isolate;
+}
+
+.gallery-slider::before,
+.gallery-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-slider::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(237, 249, 255, .98), transparent);
+}
+
+.gallery-slider::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(191, 230, 255, .98), transparent);
+}
+
+.gallery-track {
+    display: flex;
+    width: max-content;
+    gap: var(--gap);
+    padding: 0 24px;
+    animation: gallery-slide-left 42s linear infinite;
+    will-change: transform;
+}
+
+.gallery-slider:hover .gallery-track,
+.gallery-slider:focus-within .gallery-track {
+    animation-play-state: paused;
+}
+
+@keyframes gallery-slide-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-10 * (var(--card-width) + var(--gap)))); }
 }
 
 .gallery-slide {
-    position: absolute;
-    inset: 0;
+    flex: 0 0 var(--card-width);
+    width: var(--card-width);
+    height: 360px;
+    margin: 0;
+    position: relative;
     overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 20px 34px rgba(7, 45, 97, .26);
-    backface-visibility: hidden
-}
-
-.gallery-slide:nth-child(1) {
-    transform: rotateY(0deg) translateZ(290px)
-}
-
-.gallery-slide:nth-child(2) {
-    transform: rotateY(72deg) translateZ(290px)
-}
-
-.gallery-slide:nth-child(3) {
-    transform: rotateY(144deg) translateZ(290px)
-}
-
-.gallery-slide:nth-child(4) {
-    transform: rotateY(216deg) translateZ(290px)
-}
-
-.gallery-slide:nth-child(5) {
-    transform: rotateY(288deg) translateZ(290px)
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 18px 32px rgba(7, 45, 97, .20);
+    transform: translateZ(0);
 }
 
 .gallery-slide img {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.gallery-slide:hover img {
+    transform: scale(1.06);
 }
 
 .gallery-slide span {
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
-    padding: 30px 16px 15px;
+    bottom: 0;
+    padding: 46px 17px 17px;
     color: white;
-    font-size: .8rem;
-    font-weight: 700;
-    background: linear-gradient(transparent, rgba(5, 24, 58, .8))
+    font-size: .86rem;
+    font-weight: 750;
+    letter-spacing: .01em;
+    background: linear-gradient(transparent, rgba(5, 24, 58, .86));
 }
 
-.gallery-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 22px
+.gallery-slider::marker { display: none; }
+
+@media (max-width: 760px) {
+    .gallery-slider {
+        --card-width: 235px;
+        --gap: 14px;
+        border-radius: 22px;
+        padding: 20px 0;
+    }
+
+    .gallery-track {
+        padding: 0 16px;
+        animation-duration: 34s;
+    }
+
+    .gallery-slide {
+        height: 300px;
+        border-radius: 18px;
+    }
+
+    .gallery-slider::before,
+    .gallery-slider::after {
+        width: 45px;
+    }
 }
 
-.round-btn {
-    width: 42px;
-    height: 42px;
-    border: 1px solid #bedfff;
-    border-radius: 50%;
-    background: white;
-    color: var(--blue);
-    font-size: 1.15rem;
-    cursor: pointer
-}
-
-.round-btn:hover {
-    background: var(--blue);
-    color: white
-}
-
-.gallery-note {
-    font-size: .78rem;
-    color: var(--muted);
-    margin: 0 8px
+@media (prefers-reduced-motion: reduce) {
+    .gallery-track {
+        animation: none;
+        overflow-x: auto;
+    }
 }
 
 .about-layout {
