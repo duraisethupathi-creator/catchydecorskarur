@@ -124,7 +124,6 @@ img {
 
 .brand-logo {
     width: 76px;
-    height: auto;
     filter: drop-shadow(4px 8px 7px rgba(5, 36, 98, .22));
     transform: rotateY(-10deg) rotateX(7deg);
     animation: logo-float 5s ease-in-out infinite
@@ -336,8 +335,7 @@ h1 em {
     transform: rotateY(-5deg) rotateX(2deg)
 }
 
-.hero-photo img,
-.hero-photo video {
+.hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover
@@ -1341,8 +1339,7 @@ h1 em {
     }
 
     .brand-logo {
-        width: 66px;
-        height: auto
+        width: 66px
     }
 
     .navlinks {
